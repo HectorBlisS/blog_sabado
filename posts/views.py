@@ -23,8 +23,10 @@ class DetailView(View):
 	def get(self,request,slug):
 		template_name = 'detalle.html'
 		post = Post.objects.get(slug=slug)
+		comentarios = post.chispos.all()
 		context = {
-		'post':post
+		'post':post,
+		'coments':comentarios
 		}
 		return render(request,template_name,context)
 
