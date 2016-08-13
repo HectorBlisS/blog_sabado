@@ -25,3 +25,16 @@ class Comentario(models.Model):
 		return 'Este comentario lo hizo {} en el post {}'.format(self.user,self.post)
 
 
+class Categoria(models.Model):
+	nombre = models.CharField(max_length=140)
+	posts = models.ManyToManyField(Post, related_name='categorias')
+
+	def __str__(self):
+		return self.nombre
+
+
+
+
+
+
+
