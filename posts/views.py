@@ -76,7 +76,7 @@ class UpdateView(View):
 		return render(request,template_name,context)
 
 	def post(self,request):
-		form = PostForm(request.POST)
+		form = PostForm(request.POST,request.FILES)
 		new_post = form.save(commit=False)
 		new_post.slug = slugify(new_post.titulo)
 		new_post.save()

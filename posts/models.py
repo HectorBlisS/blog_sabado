@@ -8,6 +8,7 @@ class Post(models.Model):
 	cuerpo = models.TextField()
 	publicado = models.BooleanField(default=False)
 	slug = models.SlugField(max_length=500,blank=True,null=True) #esto es un slug
+	imagen = models.ImageField(upload_to="files",blank=True,null=True)
 
 	def __str__(self):
 		return self.titulo

@@ -12,6 +12,7 @@
 		<a href="{{post.get_absolute_url}}">
 			<h3>{{post.titulo}}</h3>
 		</a>
+		<img src="{{post.imagen.url}}">
 		<ul>
 			{%for cat in post.categorias.all%}
 			<a href="{%url 'categoria' cat.nombre%}">
