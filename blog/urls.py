@@ -4,8 +4,11 @@ from posts import views
 from accounts import urls as cuentasUrls
 from django.views.static import serve
 from django.conf import settings
+from posts.api import urls as apiUrls
+
 
 urlpatterns = [
+	url(r'^api/',include(apiUrls)),
     url(r'^admin/', admin.site.urls),
     url(r'^nuevo/$', views.UpdateView.as_view(), name="nuevo"),
     url(r'^blog/$', views.ListView.as_view(), name="lista"),
